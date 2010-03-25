@@ -1,0 +1,7 @@
+Rails application template with:
+- HAML
+- Authlogic
+- Formtastic
+- Facebooker
+- User and UserSession
+- Capistrano
