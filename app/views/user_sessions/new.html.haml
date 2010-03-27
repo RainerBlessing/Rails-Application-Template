@@ -1,5 +1,6 @@
 %h1
   Login
+= authlogic_facebook_login_button
  
 - semantic_form_for @user_session, :url => user_session_path do |f| 
   = f.error_messages 
