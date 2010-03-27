@@ -2,15 +2,22 @@ defaults: &defaults
   site_name: Title
   site_title: 'Title - '
   site_version: 1.0.0 
-  admin_email: <email@address>
-  contact_email: <email@address>
+  in_beta: false
   
 development: &non_production_settings
   site_url: http://127.0.0.1:3000  
+  admin_email: rainer.blessing@impulsus.de
+  #contact_email: rainer.blessing@impulsus.de
+  contact_email: info@memobuy.com
+  in_beta: true
   <<: *defaults
  
 test:
   <<: *non_production_settings
 
 production:
+   site_url: http://memobuy.com
+   admin_email: info@memobuy.com
+   application_email: info@impulsus.de
+   contact_email: info@memobuy.com
    <<: *defaults

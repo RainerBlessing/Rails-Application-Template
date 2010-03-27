@@ -1,6 +1,9 @@
-set :application, "rails2.rainerblessing.com"
-#set :repository,  "git+ssh://rainerbl@theblessing.net/home/rainerbl/git.rainerblessing.com/fb.git"
-set :repository,  "/home/rainer/src/rails/fb"
+# copies a git repository to a server with scp
+# touches /tmp/restart.txt for passenger
+
+set :application, "<applicationname>"
+#set :repository,  "git+ssh://user@ssh_server/path/to/repository"
+set :repository,  "/local/path/to/repository"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
@@ -8,7 +11,7 @@ set :repository,  "/home/rainer/src/rails/fb"
 default_run_options[:pty] = true
 set :scm_command, "git"
 set :use_sudo, false
-set :deploy_to, "/home/rainerbl/rails2.rainerblessing.com"
+set :deploy_to, "/path/at/target/server"
 set :deploy_via, :copy
 set :via, :scp
 
@@ -16,7 +19,7 @@ set :via, :scp
 # your SCM below:
 set :scm, :git
 set :ssh_options, { :forward_agent => true }
-set :domain, "rainerbl@rainerblessing.com"
+set :domain, "ssh_user@target.server"
 role :app, domain
 role :web, domain
 role :db,  domain, :primary => true
