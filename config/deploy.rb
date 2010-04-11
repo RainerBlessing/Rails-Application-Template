@@ -47,4 +47,3 @@ namespace :gems do
     run "cd #{current_release} && rake gems:install"
   end
 end
-                                    end
